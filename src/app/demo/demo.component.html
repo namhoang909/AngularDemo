@@ -1,0 +1,19 @@
+<h3>Demo works!</h3>
+<div class="text-center">
+  <p>This is demo string: {{demo}} {{name}}</p>
+  
+  <!-- <input type="text" [value]="name" #nameRef>
+  <button (click)=changeName(nameRef.value) class="btn btn-success">Try</button> -->
+  
+  <!-- input -->
+  <input (input)="changeName(nameRef.value)" type="text" [value]="name" #nameRef>
+  
+  <!-- change -->
+  <!-- <input (change)="changeName(nameRef.value)" type="text" [value]="name" #nameRef> -->
+  
+  <!-- FormModule -->
+  <h1>Two-way binding</h1>
+  <input type="text" [(ngModel)]="email">
+  <br>
+  {{email}}
+</div>
