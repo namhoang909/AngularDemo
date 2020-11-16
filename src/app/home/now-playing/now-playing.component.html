@@ -1,0 +1,6 @@
+<p>now-playing works!</p>
+<div class="owl-carousel owl-theme container text-center">
+  <div class="item" *ngFor="let movie of DanhSachPhimDangChieu">
+    <app-movie-item [movieItem]=movie></app-movie-item>
+  </div>
+</div>

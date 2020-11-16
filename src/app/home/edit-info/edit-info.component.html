@@ -1,0 +1,81 @@
+<div class="container py-3">
+  <h3 class="text-center">
+    Thông tin người dùng
+  </h3>
+  <div class="info">
+    <p>
+      <b>Username:</b> {{currentUser.taiKhoan}}
+    </p>
+  </div>
+  <div class="info">
+    <p>
+      <b>Họ tên:</b> {{currentUser.hoTen}}
+    </p>
+  </div>
+  <div class="info">
+    <p>
+      <b>Email:</b> {{currentUser.email}}
+    </p>
+  </div>
+  <div class="info">
+    <p>
+      <b>Số điện thoại:</b> {{currentUser.soDt}}
+    </p>
+  </div>
+  <div class="info">
+    <p>
+      <b>Mật khẩu:</b> {{currentUser.matKhau}}
+    </p>
+  </div>
+  <div class="info">
+    <p>
+      <b>Lịch sử đặt vé:</b> {{bookingHistory}}
+    </p>
+  </div>
+  <div class="text-right">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#my-modal" (click)="InfoToForm()">Thay đổi</button>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="my-modal-title">Thay đổi thông tin</h5>
+        <button class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editUserForm="ngForm" (ngSubmit)="EditInfo(editUserForm.value)">
+          <div class="form-group">
+            <label>Username:</label>
+            <input type="text" disabled [value]="currentUser.taiKhoan" name="taiKhoan">
+          </div>
+          <div class="form-group">
+            <label>Password:</label>
+            <input type="text" name="matKhau" required>
+          </div>
+          <div class="form-group">
+            <label>Họ tên:</label>
+            <input type="text" name="hoTen" required>
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="text" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại:</label>
+            <input type="text" name="soDt" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Thay đổi" [disabled]="editUserForm.invalid || loading">
+              Xác nhận
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="background movie-detail">
+  <div class="content m-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 mt-3">
+          <img src="{{movieDetail.hinhAnh}}" alt="">
+        </div>
+        <div class="col-9">
+          <h2>{{movieDetail.tenPhim}}</h2>
+          <p>Ngày khởi chiếu: {{movieDetail.ngayKhoiChieu | date: "dd/MM/yyyy" }}</p>
+          <p>Đánh giá: <i class="fa fa-star"></i> {{movieDetail.danhGia}}</p>
+          <div *ngFor="let scheduleItem of movieDetailSchedule | slice:0:1 ">
+            <p>Giá vé: {{scheduleItem.giaVe}}</p>
+            <p>Thời lượng: {{scheduleItem.thoiLuong}} phút</p>
+          </div>
+        </div>
+      </div>
+      <div class="content-body">
+        <p>Nội dung:</p>
+        <br>
+        <p>{{movieDetail.moTa}}</p>
+        <br>
+        <button data-toggle="modal" data-target="#my-modal" class="btn btn-primary">Lịch chiếu</button>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="movieDetail.trailer | safe" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="my-modal-title">Lịch chiếu</h5>
+        <button class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="TSystem my-2" *ngFor="let theaterSystemItem of theaterSystem">
+          <app-detail-page-system [theaterSystem]="theaterSystemItem"></app-detail-page-system>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

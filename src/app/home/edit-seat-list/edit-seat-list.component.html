@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-around mx-auto text-center">
+    <div class="col bg-info p">
+      <app-seat-list></app-seat-list>
+    </div>
+    <div class="col bg-warning">
+      <h1 #title class="text-white">Add seat</h1>
+      <input type="text" class="form-control mb-2" #name placeholder="Tên ghế">
+      <input type="text" class="form-control mb-2" #number placeholder="Số ghế">
+      <input type="text" class="form-control mb-2" #price placeholder="Giá">
+      <input type="text" class="form-control mb-2" #status placeholder="Tình trạng">
+      <button class="btn btn-success" (click)="SeatAddingP(name.value, number.value, price.value, status.value)">Add</button>
+    </div>
+  </div>
+</div>
+

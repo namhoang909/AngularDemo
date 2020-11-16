@@ -1,0 +1,57 @@
+<td>{{movie.maPhim}}</td>
+<td>{{movie.tenPhim}}</td>
+<td>{{movie.ngayKhoiChieu}}</td>
+<td>{{movie.trailer}}</td>
+<td>
+  <button #editMovieBtn [attr.maPhim]="movie.maPhim" [attr.tenPhim]="movie.tenPhim" [attr.ngayKhoiChieu]="movie.ngayKhoiChieu" [attr.trailer]="movie.trailer" [attr.biDanh]="movie.biDanh" [attr.moTa]="movie.moTa" [attr.danhGia]="movie.danhGia" [attr.hinhAnh]="movie.hinhAnh" class="btn btn-success" data-toggle="modal" data-target="#my-modal" (click)="MovieEditing(editMovieBtn)">
+    <i class="fa fa-edit"></i>
+  </button>
+  <button #deleteBtn [attr.maPhim]="movie.maPhim" class="btn btn-danger" (click)="DeleteMovieFunc(deleteBtn)">
+    <i class="fa fa-times"></i>
+  </button>
+</td>
+
+<div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="my-modal-title">Edit movie detail</h5>
+        <button class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #editMovieForm (ngSubmit)="EditMovieDetail(editMovieForm.value)">
+          <div class="form-group">
+            <label for="">Mã Phim</label>
+            <input ngModel name="maPhim" type="text" placeholder="Nhập mã phim" required>
+          </div>
+          <div class="form-group">
+            <label for="">Tên Phim</label>
+            <input ngModel name="tenPhim" type="text" placeholder="Nhập tên phim" required>
+          </div>
+          <div class="form-group">
+            <label for="">Bí Danh</label>
+            <input ngModel name="biDanh" type="text" placeholder="Nhập mã phim">
+          </div>
+          <div class="form-group">
+            <label for="">Trailer</label>
+            <input ngModel name="trailer" type="text" placeholder="Nhập link trailer phim" required>
+          </div>
+          <div class="form-group">
+            <label for="">Ngày khởi chiếu</label>
+            <input ngModel name="ngayKhoiChieu" type="date" placeholder="Nhập ngày khởi chiếu" required>
+          </div>
+          <div class="form-group">
+            <label for="">Mô tả</label>
+            <input ngModel name="moTa" type="text" placeholder="Nhập mô tả" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

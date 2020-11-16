@@ -1,0 +1,12 @@
+.btn:not(.btn-success) {
+  background: repeating-linear-gradient(to right,red 0,#00f 50%,red 100%);
+  background-size: 200% auto;
+  background-position: 0 100%;
+  animation: gradient 2s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+.btn{
+  color: azure;
+  border-radius: 9999px;
+}

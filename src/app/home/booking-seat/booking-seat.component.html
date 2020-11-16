@@ -1,0 +1,9 @@
+<ng-container *ngIf="!seat.daDat; else bookedSeat">
+  <button class="btn btn-success mr-2 mb-2" (click)="SeatBooking()" [ngClass]="{'btn-primary': seatType,'btn-warning':isPicking}">{{seat.tenGhe}}</button>
+</ng-container>
+
+<ng-template #bookedSeat>
+  <button class="btn btn-danger mr-2 mb-2" disabled style="cursor: not-allowed;">
+    {{seat.tenGhe}}
+  </button>
+</ng-template>

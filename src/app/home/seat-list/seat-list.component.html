@@ -1,0 +1,11 @@
+<h1 class="text-white">Đặt ghế</h1>
+<app-seat-booking *ngFor="let seat of seatList" [seatItem]="seat" (emitStatus)="SeatBookingRoot($event, seat)">
+</app-seat-booking>
+<hr>
+<p *ngFor="let seat of bookingSeatList" class="text-white">
+  <span>Tên ghế: {{seat.TenGhe}}, </span>
+  <span>Giá: {{seat.Gia}}</span>
+</p>
+<hr>
+<p class="text-white">Số ghế đã đặt: {{amountSeatBooked}}</p>
+<p class="text-white">Số ghế còn lại: {{amountSeatNBooked}}</p>

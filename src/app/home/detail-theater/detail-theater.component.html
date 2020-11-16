@@ -1,0 +1,7 @@
+<p>Tên rạp: {{theater.tenCumRap}}</p>
+<p>Lịch chiếu</p>
+<ul *ngFor="let scheduleItem of schedule">
+  <li>
+    <app-detail-schedule [scheduleItem]="scheduleItem"></app-detail-schedule>
+  </li>
+</ul>

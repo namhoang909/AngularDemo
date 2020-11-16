@@ -1,0 +1,15 @@
+.movies {
+  margin-top: 70px;
+}
+
+.card-img-top.img-fluid{
+  height: 300px;
+  
+}
+
+.movie-title {
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
+}

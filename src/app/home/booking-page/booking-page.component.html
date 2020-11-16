@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>{{movieScheduleDetail.tenPhim}}</h1>
+      <p>Cụm rạp: {{movieScheduleDetail.tenCumRap}}</p>
+      <p>Địa chỉ: {{movieScheduleDetail.diaChi}}</p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-9 text-center">
+      <div class="row">
+        <div class="col-md-2 mb-3" *ngFor="let seat of seatList">
+          <app-booking-seat [seat]="seat" (emitSeat)="SeatBooking($event)"></app-booking-seat>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 text-center">
+      <h3>Danh sách ghế đã đặt:</h3>
+      <div class="bg-success text-white">Tổng cộng</div>
+      <p *ngFor="let chosenSeat of chosenSeatList">
+        Ghế: {{ chosenSeat.tenGhe }} - Giá: {{ chosenSeat.giaVe }} VND
+        <span class="text-danger ml-2" (click)="CancelBooking(chosenSeat)">[Huỷ]</span>
+      </p>
+    </div>
+  </div>
+</div>

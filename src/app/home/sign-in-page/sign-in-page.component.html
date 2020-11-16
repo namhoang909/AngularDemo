@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <form [formGroup]="signInForm" (ngSubmit)="SignInFunc()">
+        <h4 class="display-4">Sign In</h4>
+        <div class="form-group">
+          <label for="">Username</label>
+          <input type="text" class="form-control" formControlName="Username">
+          <div *ngIf="signInForm.get('Username').invalid && signInForm.get('Username').touched">
+            <div *ngIf="signInForm.get('Username').errors['required']" class="alert alert-danger">
+              Please enter valid username.
+            </div>
+            <div *ngIf="signInForm.get('Username').errors['pattern']" class="alert alert-danger">
+              The username's format is incorrect.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control" formControlName="Password"> 
+          <div *ngIf="signInForm.get('Password').invalid && signInForm.get('Password').touched">
+            <div *ngIf="signInForm.get('Password').errors['required']" class="alert alert-danger">
+              Please enter valid password.
+            </div>
+            <div *ngIf="signInForm.get('Password').errors['minlength']" class="alert alert-danger">
+              Password must include more than 5 letters.
+            </div>
+          </div>
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

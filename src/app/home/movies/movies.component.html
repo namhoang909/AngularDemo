@@ -1,0 +1,40 @@
+<div class="container movies">
+  <div class="row">
+    
+    <div class="col-12">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Movie name" aria-label="Search" #movieName>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="SearchMovie(movieName.value)">Search</button>
+      </form>
+    </div>
+
+    <div *ngFor="let movie of movieList" class="col-md-3">
+      <div class="card my-2">
+        <img class="card-img-top img-fluid" [src]="movie.hinhAnh" alt="" />
+        <div class="card-body">
+          <h4 class="card-title movie-title">{{ movie.tenPhim | uppercase }}</h4>
+          <!-- <p class="card-text">{{ movie.moTa }}</p> -->
+          <p>Khởi chiếu: {{ movie.ngayKhoiChieu | date: "dd/MM/yyyy" }}</p>
+          <button
+            class="btn btn-success"
+            routerLink="/detail/{{ movie.maPhim }}"
+          >
+            Chi tiết
+          </button>
+          <!-- Demo query params -->
+          <!-- <button
+            class="btn btn-danger"
+            routerLink="/detail"
+            [queryParams]="{ maPhim: movie.maPhim, tenPhim: movie.tenPhim }"
+          >
+            Chi tiết query params
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto">
+    <app-theaters></app-theaters>
+  </div>
+</div>

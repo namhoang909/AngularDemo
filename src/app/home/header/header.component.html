@@ -1,0 +1,36 @@
+<header id="header">
+  <a href="#" class="logo">
+    <img src="../../../assets/img/web-logo.png" alt="">
+  </a>
+  <nav class="header__menu">
+    <ul class="mb-0">
+      <li>
+        <a routerLink="/">Trang chủ</a>
+      </li>
+      <li>
+        <a routerLink="/movies">Danh sách phim</a>
+      </li>
+      <li>
+        <a routerLink="#">Đặt vé</a>
+      </li>
+      <li *ngIf="!isSignin; else editInfo">
+        <a routerLink="/signup">Đăng ký</a>
+      </li>
+      <ng-template #editInfo>
+        <li>
+          <a routerLink="/editInfo">Thông tin cá nhân</a>
+        </li>
+      </ng-template>
+    </ul>
+  </nav>
+  <a routerLink="/signin" class="signin" *ngIf="!isSignin; else signinUser">
+    <i class="fa fa-user-circle"></i>
+    <span>Đăng nhập</span>
+  </a>
+  <ng-template #signinUser>
+    <a class="signin">
+      <i class="fa fa-user-circle"></i>
+      <span>Xin chào</span>
+    </a>
+  </ng-template>
+</header>

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 text-center">
+    <button class="btn mr-2" [ngClass]="{'btn-success': newsType=='Cine'}" (click)="NewsTypeDisplay('Cine')">Điện Ảnh</button>
+    <button class="btn mr-2" [ngClass]="{'btn-success': newsType=='Review'}" (click)="NewsTypeDisplay('Review')">Review</button>
+    <button class="btn" [ngClass]="{'btn-success': newsType=='Promotion'}" (click)="NewsTypeDisplay('Promotion')">Khuyến Mãi</button>
+  </div>
+</div>
+
+<div class="row" [ngSwitch]="newsType">
+  <div *ngSwitchCase="'Cine'" class="col-12 text-center">
+    <app-cinema></app-cinema>
+  </div>
+  
+  <div *ngSwitchCase="'Review'" class="col-12 text-center">
+    <app-review></app-review>
+  </div>
+
+  <div *ngSwitchCase="'Promotion'" class="col-12 text-center">
+    <app-promotion></app-promotion>
+  </div>
+</div>

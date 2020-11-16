@@ -1,0 +1,26 @@
+<div class="form-input">
+  <form #formAddItem (ngSubmit)="AddToList(formAddItem.value)">
+    <div class="form-group">
+      <label for="">To do:</label>
+      <input required type="text" class="form-control" placeholder="Input task">
+      <button type="submit" class="btn btn-success">Add task</button>
+    </div>
+  </form>
+</div>
+
+<div class="table-display">
+  <table class="table table-light">
+    <thead class="thead-light">
+      <tr class="d-flex">
+        <th class="col-9">Task</th>
+        <th class="col-3">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let toDoItem of toDoList" class="d-flex">
+        <app-to-do-item [item]="toDoItem" (ChangeStat)="ChangeStatus($event)" (DeleteItem)="DeleteTask($event)">
+        </app-to-do-item>
+      </tr>
+    </tbody>
+  </table>
+</div>

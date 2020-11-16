@@ -1,0 +1,10 @@
+<td class="col-9">
+  {{item.content}}
+</td>
+<td class="col-3">
+  <button class="btn btn-success" *ngIf="item.status; else notDone" (click)="ChangeStatus()">Done</button>
+  <ng-template #notDone>
+    <button class="btn" (click)="ChangeStatus()">Not done</button>
+  </ng-template>
+  <button class="btn btn-danger" (click)="DeleteItem()">Delete</button>
+</td>

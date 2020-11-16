@@ -1,0 +1,9 @@
+<ng-container *ngIf="!seatItem.TrangThai; else bookedSeat">
+  <button class="btn btn-success mr-2 mb-2" (click)="SeatBooking()" [ngClass]="{'btn-warning':status}">{{seatItem.SoGhe}}</button>
+</ng-container>
+
+<ng-template #bookedSeat>
+  <button class="btn btn-danger mr-2 mb-2" disabled style="cursor: not-allowed;">
+    {{seatItem.SoGhe}}
+  </button>
+</ng-template>
