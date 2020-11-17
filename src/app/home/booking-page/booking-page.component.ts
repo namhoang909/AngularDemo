@@ -55,15 +55,16 @@ export class BookingPageComponent implements OnInit {
         const index = this.chosenSeatList.findIndex((seat) => seat.maGhe === chosenSeat.maGhe);
         if (index !== -1) {
           this.chosenSeatList.splice(index, 1);
+          this.SumPrice();
         };
       }
     });
-    this.SumPrice();
   }
 
   SumPrice() {
-    this.chosenSeatList.forEach((chosenSeat) => {
+    this.total = 0;
+    for(let chosenSeat of this.chosenSeatList) {
       this.total += parseInt(chosenSeat.giaVe, 10);
-    })
+    };
   }
 }
