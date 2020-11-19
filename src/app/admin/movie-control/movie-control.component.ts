@@ -38,9 +38,11 @@ export class MovieControlComponent implements OnInit, OnDestroy {
       this.movieList.splice(index, 1);
       this.movieService.DeleteMovie(maPhim).subscribe({
         error: (err) => {
+          alert("error " + err)
           console.log(err);
         },
         complete: () => {
+          alert("Xoa phim thanh cong.")
           console.log("Code's movie (" + maPhim + ") has been deleted");
         }
       })
@@ -51,6 +53,7 @@ export class MovieControlComponent implements OnInit, OnDestroy {
     console.log(values);
     this.movieService.AddMovieFunc({...values, maNhom: "GP01"}).subscribe({
       next: (result) => {
+        alert("Movie is added.")
         let frm = new FormData();
         frm.append('File', values.hinhAnh, values.tenPhim);
         frm.append('tenphim', values.tenPhim);
@@ -58,8 +61,15 @@ export class MovieControlComponent implements OnInit, OnDestroy {
         this.movieService.PictureEditing(frm).subscribe({
           next: (result) => {
             console.log("Picture has been added.")
+          },
+          error: (err) => {
+            alert("error " + err + " can not add image.")
           }
         })
+      },
+      error: (err) => {
+        alert("Error " + err);
+        console.log(err);
       }
     })
   }

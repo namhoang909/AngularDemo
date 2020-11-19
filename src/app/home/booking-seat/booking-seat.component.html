@@ -1,5 +1,5 @@
 <ng-container *ngIf="!seat.daDat; else bookedSeat">
-  <button class="btn btn-success mr-2 mb-2" (click)="SeatBooking()" [ngClass]="{'btn-primary': seatType,'btn-warning':isPicking}">{{seat.tenGhe}}</button>
+  <button class="btn btn-success mr-2 mb-2" [disabled]="!isSignIn" (click)="SeatBooking()" [ngClass]="{'btn-primary': seatType,'btn-warning':isPicking}" [ngStyle]="{'cursor': isSignIn ? 'pointer' : 'not-allowed'}">{{seat.tenGhe}}</button>
 </ng-container>
 
 <ng-template #bookedSeat>
