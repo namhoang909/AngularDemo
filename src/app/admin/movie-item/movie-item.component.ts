@@ -49,9 +49,8 @@ export class MovieItemComponent implements OnInit {
     })
   }
 
-  DeleteMovieFunc() {
+  DeleteMovieFunc(values) {
     const maPhim = this.movie.maPhim;
     this.DeleteMovie.emit(maPhim);
   }
-
 }

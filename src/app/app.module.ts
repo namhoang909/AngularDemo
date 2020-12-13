@@ -14,7 +14,7 @@ import { AuthInterceptor } from 'src/app/core/interceptors/auth.interceptor';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-list/to-do-item/to-do-item.component';
 import { SafePipe } from './services/pipe/safe.pipe';
-import { RandomGameComponent } from './random-game/random-game.component';
+import { RandomGameComponent } from './random-game/random-game/random-game.component';
 
 @NgModule({
   declarations: [
