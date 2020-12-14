@@ -3,14 +3,14 @@
     <div class="container">
       <div class="row">
         <div class="col-3 mt-3">
-          <img src="{{movieDetail.hinhAnh}}" alt="">
+          <img src="{{movieDetail.hinhAnh}}" alt="" class="img-fluid movieImg">
         </div>
-        <div class="col-9">
+        <div class="col-9 mt-3">
           <h2>{{movieDetail.tenPhim}}</h2>
           <p>Ngày khởi chiếu: {{movieDetail.ngayKhoiChieu | date: "dd/MM/yyyy" }}</p>
-          <p>Đánh giá: <i class="fa fa-star"></i> {{movieDetail.danhGia}}</p>
+          <p>Đánh giá: <fa-icon [icon]="faStar"></fa-icon> {{movieDetail.danhGia}}</p>
           <div *ngFor="let scheduleItem of movieDetailSchedule | slice:0:1 ">
-            <p>Giá vé: {{scheduleItem.giaVe}}</p>
+            <p>Giá vé: {{scheduleItem.giaVe}} Vnd</p>
             <p>Thời lượng: {{scheduleItem.thoiLuong}} phút</p>
           </div>
         </div>
@@ -21,9 +21,6 @@
         <p>{{movieDetail.moTa}}</p>
         <br>
         <button data-toggle="modal" data-target="#my-modal" class="btn btn-primary">Lịch chiếu</button>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" [src]="movieDetail.trailer | safe" allowfullscreen></iframe>
-        </div>
       </div>
     </div>
   </div>

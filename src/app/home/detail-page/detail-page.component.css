@@ -5,8 +5,10 @@
   background-size: cover;
 }
 
-.fa.fa-star{
-  color: rgb(255, 255, 111);
+fa-icon {
+  color: rgb(194, 194, 0);
+  width: 50px;
+  height: 50px;
 }
 
 .movie-detail {
@@ -15,4 +17,10 @@
 
 .col-3.mt-3 {
   height: 300px;
+  width: 250px;
+}
+
+.movieImg {
+  height: 100%;
+  width: 100%;
 }

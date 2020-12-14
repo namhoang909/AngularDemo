@@ -14,7 +14,7 @@ export class SignUpGuard implements CanDeactivate<SignUpPageComponent> {
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const isDirty = component.checkDirtyForm();
     if (isDirty) {
-      return window.confirm('Bạn đã vấy bẩn form');
+      return window.confirm('Form chưa hoàn tất.');
     }
     return false;
   }

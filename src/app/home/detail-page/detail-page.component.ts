@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/services/movie.service';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-detail-page',
@@ -11,6 +12,7 @@ export class DetailPageComponent implements OnInit {
   movieDetail: any = {};
   theaterSystem: any = [];
   movieDetailSchedule: any[] = [];
+  faStar = faStar;
   
   constructor(
     private ActivatedRoute: ActivatedRoute,

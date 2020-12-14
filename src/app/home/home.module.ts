@@ -34,6 +34,7 @@ import { TheatersComponent } from './theaters/theaters.component';
 import { TheaterSystemComponent } from './theater-system/theater-system.component';
 import { TheaterItemComponent } from './theater-item/theater-item.component';
 import { BookingSeatComponent } from './booking-seat/booking-seat.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   {
@@ -46,7 +47,7 @@ const routes: Routes = [
       {path: 'booking', component: SeatListComponent},
       {path: 'seatbooking/:id', component: BookingPageComponent},
       {path: 'signin', component: SignInPageComponent},
-      {path: 'signup', component: SignUpPageComponent, canDeactivate: [SignUpGuard]},
+      {path: 'signup', component: SignUpPageComponent, /*canDeactivate: [SignUpGuard]*/},
       {path: 'editInfo', component: EditInfoComponent, canActivate: [SignInGuard]}, 
     ]
   }
@@ -54,32 +55,56 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeLayoutComponent, 
-    DetailPageComponent, 
-    HomePageComponent, 
-    BookingPageComponent, 
-    HeaderComponent, 
-    FooterComponent, 
-    MovieItemComponent, 
-    SeatBookingComponent, 
-    SeatListComponent, 
-    EditSeatListComponent, 
-    SignInPageComponent, 
-    SignUpPageComponent, SliderComponent, MovieTypeComponent, UpcomingComponent, NowPlayingComponent, NewsComponent, CinemaComponent, PromotionComponent, ReviewComponent, NewsItemComponent, MoviesComponent, EditInfoComponent, DetailPageSystemComponent, DetailTheaterComponent, DetailScheduleComponent, TheatersComponent, TheaterSystemComponent, TheaterItemComponent, BookingSeatComponent],
+    HomeLayoutComponent,
+    DetailPageComponent,
+    HomePageComponent,
+    BookingPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    MovieItemComponent,
+    SeatBookingComponent,
+    SeatListComponent,
+    EditSeatListComponent,
+    SignInPageComponent,
+    SignUpPageComponent,
+    SliderComponent,
+    MovieTypeComponent,
+    UpcomingComponent,
+    NowPlayingComponent,
+    NewsComponent,
+    CinemaComponent,
+    PromotionComponent,
+    ReviewComponent,
+    NewsItemComponent,
+    MoviesComponent,
+    EditInfoComponent,
+    DetailPageSystemComponent,
+    DetailTheaterComponent,
+    DetailScheduleComponent,
+    TheatersComponent,
+    TheaterSystemComponent,
+    TheaterItemComponent,
+    BookingSeatComponent,
+  ],
   imports: [
-    CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   exports: [
-    HomeLayoutComponent, 
-    DetailPageComponent, 
-    HomePageComponent, 
-    BookingPageComponent, 
-    HeaderComponent, 
-    FooterComponent, 
-    MovieItemComponent, 
-    SeatListComponent, 
-    EditSeatListComponent, 
-    SignInPageComponent, 
-    SignUpPageComponent]
+    HomeLayoutComponent,
+    DetailPageComponent,
+    HomePageComponent,
+    BookingPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    MovieItemComponent,
+    SeatListComponent,
+    EditSeatListComponent,
+    SignInPageComponent,
+    SignUpPageComponent,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

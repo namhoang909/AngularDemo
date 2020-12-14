@@ -27,10 +27,18 @@
     <i class="fa fa-user-circle"></i>
     <span>Đăng nhập</span>
   </a>
+  
   <ng-template #signinUser>
-    <a class="signin">
-      <i class="fa fa-user-circle"></i>
-      <span>Xin chào</span>
-    </a>
+    <div class="dropdown show">
+      <a class="signin">
+        <i class="fa fa-user-circle"></i>
+        <span>Xin chào</span> {{ currentUser.hoTen }}
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" (click)="SignOutFunc()">Đăng xuất</a>
+      </div>
+    </div>
+    
   </ng-template>
 </header>

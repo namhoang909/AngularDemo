@@ -1,4 +1,4 @@
-<p>Hệ thống rạp: <img src="theaterSystem.logo" alt=""> {{theaterSystem.tenHeThongRap}}</p>
-<div class="theater" *ngFor="let theaterItem of theater">
+<p class="bg-warning font-weight-bold pl-2">Hệ thống rạp: <img src="theaterSystem.logo" alt=""> {{theaterSystem.tenHeThongRap}}</p>
+<div class="theater pl-2" *ngFor="let theaterItem of theater">
   <app-detail-theater [theater]="theaterItem"></app-detail-theater>
 </div>
