@@ -27,6 +27,7 @@ export class DetailPageComponent implements OnInit {
             this.movieDetail = result;
             this.movieDetailSchedule = this.movieDetail.lichChieu;
             console.log(this.movieDetailSchedule);
+            this.LoadingScreen();
           }
         });
         this.MovieService.FetchMovieSchedule(params.id).subscribe({
@@ -38,4 +39,14 @@ export class DetailPageComponent implements OnInit {
     })
   }
 
+  LoadingScreen() {
+    setTimeout(this.ShowPage, 2000);
+  }
+
+  ShowPage() {
+    // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5
+    // https://www.geeksforgeeks.org/how-to-display-spinner-on-the-screen-till-the-data-from-the-api-loads-using-angular-8
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("loaded").style.display = "block"
+  }
 }

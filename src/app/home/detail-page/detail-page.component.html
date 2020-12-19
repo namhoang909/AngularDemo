@@ -1,4 +1,5 @@
-<div class="background movie-detail">
+<div id="loading"></div>
+<div id="loaded" style="display: none;" class="background movie-detail show-detail">
   <div class="content m-2">
     <div class="container">
       <div class="row">
@@ -13,14 +14,13 @@
             <p>Giá vé: {{scheduleItem.giaVe}} Vnd</p>
             <p>Thời lượng: {{scheduleItem.thoiLuong}} phút</p>
           </div>
+          <button data-toggle="modal" data-target="#my-modal" class="btn btn-primary">Lịch chiếu</button>
         </div>
       </div>
-      <div class="content-body">
+      <div class="content-body mt-3">
         <p>Nội dung:</p>
         <br>
         <p>{{movieDetail.moTa}}</p>
-        <br>
-        <button data-toggle="modal" data-target="#my-modal" class="btn btn-primary">Lịch chiếu</button>
       </div>
     </div>
   </div>
